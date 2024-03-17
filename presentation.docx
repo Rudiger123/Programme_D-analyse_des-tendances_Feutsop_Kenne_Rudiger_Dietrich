@@ -1,0 +1,21 @@
+Presentation pour Helene : 
+
+1- Problemes localises :
+
+    Les problemes reperes par le code dde alex sont les suivants :
+    -traitement des exceptions
+    -le chevauchement des variables 
+    -l’approche du code ne fonctionnera pas sur le long terme. On ne
+    connaît pas tous les symptômes qu’on rencontrera.le code n'est pas reutilisable.
+    -il y'a pas de traitement des exceptions levees par la declaration des objets de classe tels que BufferedReader,..etc.
+    -le code ne respecte pas les normes standards de programmation orientee objet(POO).
+    -presence des commentaires superflus dans le code.
+
+2- les fichiers ajoutees sont :
+ -IAnalysticsMethods : c est une interface java qui contient toutes les methodes 
+
+
+    
+
+
+
