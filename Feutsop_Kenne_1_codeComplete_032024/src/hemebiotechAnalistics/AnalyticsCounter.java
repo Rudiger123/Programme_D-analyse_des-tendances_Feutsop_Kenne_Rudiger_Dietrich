@@ -1,4 +1,5 @@
-package com.hemebiotech.analytics;
+package hemebiotechAnalistics;
+
 
 import java.util.HashMap;
 
@@ -11,7 +12,7 @@ public class AnalyticsCounter {
 	public static void main(String args[]) throws Exception {
 
 	//creation d'un objet de la classe ReadSymptomDataFromFile
-	ReadSymptomDataFromFile read = new ReadSymptomDataFromFile("yourFilePath\\Programme d'analyse des tendances_Feutsop_kenne\\Feutsop_Kenne_1_codeComplete_032024\\symptoms.txt");
+	ReadSymptomDataFromFile read = new ReadSymptomDataFromFile("D:\\Programme d'analyse des tendances_Feutsop_kenne\\Feutsop_Kenne_1_codeComplete_032024\\symptoms.txt");
 		
 	//lecture des symptoms dans le fichier et stockage dans une liste de chaine de caractere ..
 	AnalysticsMethods analystic = new AnalysticsMethods(read.GetSymptoms());
