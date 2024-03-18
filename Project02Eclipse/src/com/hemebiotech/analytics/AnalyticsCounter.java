@@ -1,43 +1,26 @@
 package com.hemebiotech.analytics;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.util.HashMap;
 
 public class AnalyticsCounter {
-	private static int headacheCount = 0;	// initialize to 0
-	private static int rashCount = 0;		// initialize to 0
-	private static int pupilCount = 0;		// initialize to 0
-	
+
+	/**
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String args[]) throws Exception {
-		// first get input
-		BufferedReader reader = new BufferedReader (new FileReader("symptoms.txt"));
-		String line = reader.readLine();
 
-		int i = 0;	// set i to 0
-		int headCount = 0;	// counts headaches
-		while (line != null) {
-			i++;	// increment i
-			System.out.println("symptom from file: " + line);
-			if (line.equals("headache")) {
-				headCount++;
-				System.out.println("number of headaches: " + headCount);
-			}
-			else if (line.equals("rush")) {
-				rashCount++;
-			}
-			else if (line.contains("pupils")) {
-				pupilCount++;
-			}
-
-			line = reader.readLine();	// get another symptom
-		}
+	//creation d'un objet de la classe ReadSymptomDataFromFile
+	ReadSymptomDataFromFile read = new ReadSymptomDataFromFile("D:\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\symptoms.txt");
 		
-		// next generate output
-		FileWriter writer = new FileWriter ("result.out");
-		writer.write("headache: " + headacheCount + "\n");
-		writer.write("rash: " + rashCount + "\n");
-		writer.write("dialated pupils: " + pupilCount + "\n");
-		writer.close();
+	//lecture des symptoms dans le fichier et stockage dans une liste de chaine de caractere ..
+	AnalysticsMethods analystic = new AnalysticsMethods(read.GetSymptoms());
+
+	//la map qui contiendra l'ensemble des symptoms et leurs occurences ..
+	HashMap<String, Integer> counterMap = analystic.occurencesMap();
+
+	//le stockage des symptoms et de leurs occurences dans le fichier result.out....
+	analystic.generateOuput(counterMap);
+
 	}
 }

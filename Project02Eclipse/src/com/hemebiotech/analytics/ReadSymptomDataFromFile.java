@@ -44,4 +44,9 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		return result;
 	}
 
+	public static void main(String[] args) {
+		ReadSymptomDataFromFile read = new ReadSymptomDataFromFile("D:\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\symptoms.txt");
+		System.out.println(read.GetSymptoms());
+	}
+
 }
